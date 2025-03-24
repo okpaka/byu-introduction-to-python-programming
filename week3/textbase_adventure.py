@@ -8,7 +8,7 @@ it is a simple game that helps the user to know if they can pursue a career in t
 
 
 option=input("COLLEGE or HIGH SCHOOL: ")
-
+option = option.upper()
 if option == "COLLEGE":
 #college
     field = input("Enter your field of study: ")
