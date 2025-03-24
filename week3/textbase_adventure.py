@@ -11,10 +11,12 @@ option=input("COLLEGE or HIGH SCHOOL: ")
 option = option.upper()
 if option == "COLLEGE":
 #college
-    field = input("Enter your field of study: ")
+    field = input("Enter your field of study: e.g ENGINEERING, SCIENCE, ART: ")
+    field = field.upper()
 
     #Engineering
-    if field == "Engineering":
+    if field == "ENGINEERING":
+        print("Welcome to College of Engineering")
         grade = int(input("Enter your grade: "))
         if grade > 70:
             print("You can pursue a career in Engineering")
@@ -22,7 +24,8 @@ if option == "COLLEGE":
             print("You need to improve your grades to pursue a career in Engineering")
 
     #Science
-    elif field == "Science":
+    elif field == "SCIENCE":
+        print("Welcome to College of Science")
         grade = int(input("Enter your grade: "))
         if grade > 70:
             print("You can pursue a career in Science")
@@ -30,7 +33,8 @@ if option == "COLLEGE":
             print("You need to improve your grades to pursue a career in Science")
 
     #Art
-    elif field == "Art":
+    elif field == "ART":
+        print("Welcome to College of Art")
         grade = int(input("Enter your grade: "))
         if grade > 70:
             print("You can pursue a career in Art")
@@ -41,20 +45,21 @@ if option == "COLLEGE":
 
 #high school
 elif option == "HIGH SCHOOL":
-    subject = input("Enter your subject: ")
-
+    subject = input("Enter your subject: e.g MATHEMATICS, BIOLOGY, BUSINESS STUDIES: ")
+    subject = subject.upper()
              #mathematics
-    if subject == "Mathematics":
+    if subject == "MATHEMATICS":
         print("Welcome to High School of Mathematics")
-        if subject == "Mathematics":
-            grade = int(input("Enter your grade: "))
-            if grade > 70:
-                print("You can pursue a career in Mathematics")
-            else:
-                print("You need to improve your grades to pursue a career in Mathematics")
+        grade = int(input("Enter your grade: "))
+        if grade > 70:
+            print("You can pursue a career in Mathematics")
+        else:
+            print("You need to improve your grades to pursue a career in Mathematics")
 
+            
             #Biology
-    elif subject == "Biology":
+    elif subject == "BIOLOGY":
+            print("Welcome to High School of Biology")
             grade = int(input("Enter your grade: "))
             if grade > 70:
                 print("You can pursue a career in Biology")
@@ -62,7 +67,8 @@ elif option == "HIGH SCHOOL":
                 print("You need to improve your grades to pursue a career in Biology")
 
             #Business studies
-    elif subject == "Business studies":
+    elif subject == "BUSINESS STUDIES":
+            print("Welcome to High School of Business studies")
             grade = int(input("Enter your grade: "))
             if grade > 70:
                 print("You can pursue a career in Business studies")
