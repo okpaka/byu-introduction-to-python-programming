@@ -14,6 +14,8 @@ while guessed_word != secret_word:
         guessed_word = input(f"Guess the word {under_score}")
         number_of_guesses +=1
         if guessed_word != secret_word:
+                if len(guessed_word) != length_of_scret_word:
+                        print("guessed word cannot be greater or less than secret word")
                 print(f"guessed word {guessed_word} is incorrect")
                 
 print(f"{guessed_word} is correct and you guessed {number_of_guesses} times")
