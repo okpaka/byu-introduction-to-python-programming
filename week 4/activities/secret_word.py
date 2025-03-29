@@ -1,21 +1,52 @@
-"""
-    this is a game where a scret word is store in a variable and the user has to guess it
+# """
+# this is an example of a while loop
+# """
+
+# # initialize the variable
+# Number = int(input("Enter a positive number: "))
+
+# # check if the input is a not a negative number
+
+# while Number < 0:
+#     Number = input("Enter a positive number")
+#     Number = int(Number)
+# print("You entered a positive number ", Number)
+
+def get_hint(secret_word, guess):
+    hint = ""
+    for i in range(len(secret_word)):
+        if guess[i] == secret_word[i]:  # Correct letter and correct position
+            hint += guess[i].upper()
+        elif guess[i] in secret_word:  # Correct letter but wrong position
+            hint += guess[i].lower()
+        else:  # Letter not in the secret word
+            hint += "_"
+    return hint
+
+def main():
+    secret_word = "python"  # The secret word
+    attempts = 0
+    guessed_correctly = False
+
+    print("Welcome to the Guessing Game!")
+    print(f"The secret word has {len(secret_word)} letters.")
     
-"""
+    while not guessed_correctly:
+        guess = input("Please enter your guess: ").strip()
 
-secret_word = "Lucky"
-guessed_word=""
-number_of_guesses = 0
-length_of_scret_word = len(secret_word)
-under_score = '_ ' *length_of_scret_word
+        # Check if the guess has the same number of letters as the secret word
+        if len(guess) != len(secret_word):
+            print(f"Your guess must be {len(secret_word)} letters long.")
+            continue
 
-#using while loop to compare entered word
-while guessed_word != secret_word:
-        guessed_word = input(f"Guess the word {under_score}")
-        number_of_guesses +=1
-        if guessed_word != secret_word:
-                if len(guessed_word) != length_of_scret_word:
-                        print("guessed word cannot be greater or less than secret word")
-                print(f"guessed word {guessed_word} is incorrect")
-                
-print(f"{guessed_word} is correct and you guessed {number_of_guesses} times")
+        attempts += 1
+
+        if guess == secret_word:
+            guessed_correctly = True
+            print(f"Congratulations! You've guessed the word '{secret_word}' in {attempts} attempts.")
+        else:
+            hint = get_hint(secret_word, guess)
+            print(f"Hint: {hint}")
+
+if __name__ == "__main__":
+    main()
